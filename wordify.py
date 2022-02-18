@@ -41,6 +41,7 @@ def render(wordify):
 
 def guess(num):
     if num == MAX_GUESSES-1:
+        assert (num+1) == MAX_GUESSES
         leave()
     else:
         print("Please guess a 6 letter word: ")
@@ -53,6 +54,7 @@ def guess(num):
             render(guessed_word)
             if guessed_word in word:
                 # win
+                assert guessed_word in word
                 print(
                     'Congrats! you successfully got the word in', num+1, '/', MAX_GUESSES, ' tries!')
             else:
